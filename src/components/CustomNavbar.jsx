@@ -4,7 +4,7 @@ const CustomNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container className="m-0">
-        <Navbar.Brand href="#">U3-W9-L2</Navbar.Brand>
+        <Navbar.Brand href="#">EPI-BOOK</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

@@ -1,1 +1,24 @@
+#row {
+  width: 75%;
+}
 
+#row2 {
+  width: 25%;
+  text-align: left;
+}
+
+#card-img {
+  height: 230px;
+}
+
+#title-book {
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 425px) {
+  #row {
+    width: 100%;
+  }
+}

@@ -7,6 +7,7 @@ import "../../src/App.css";
 import { Component } from "react";
 
 import { Badge, Button, Card, Col, Container, Dropdown, Row } from "react-bootstrap";
+import CustomFeedback from "./CustomFeedback";
 
 class AllTheBooks extends Component {
   state = {
@@ -23,10 +24,10 @@ class AllTheBooks extends Component {
     return (
       <>
         <div className="text-center my-4">
-          <h1>I tuoi titoli preferiti</h1>
+          <h1>Browse through the titles you prefer</h1>
         </div>
-        <Dropdown className="text-center mb-2">
-          <Dropdown.Toggle variant="dark" id="dropdown-basic">
+        <Dropdown className="text-left mb-4 ms-3">
+          <Dropdown.Toggle id="dropdown-basic">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-filter" viewBox="0 0 16 16">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
             </svg>
@@ -34,7 +35,7 @@ class AllTheBooks extends Component {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <div className="d-flex justify-content-center gap-2 mb-3">
+            <div className="d-flex justify-content-center gap-2 mx-2">
               <Button variant="primary" onClick={() => this.setState({ books: fantasy })}>
                 fantasy
               </Button>
@@ -80,28 +81,7 @@ class AllTheBooks extends Component {
               ))}
             </Col>
           </Row>
-          <Row id="row2">
-            <div id="feedback" className="d-flex flex-column">
-              <h4>Recensioni</h4>
-              {selectedBook ? (
-                <>
-                  <h5>{selectedBook.title}</h5>
-
-                  <p>{selectedBook.price || "nessuna recensione."}</p>
-                </>
-              ) : (
-                <p>Seleziona un libro per vedere le recensioni</p>
-              )}
-              <Button variant="primary mx-auto">
-                <div className="d-flex align-items-center ">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-cart4" viewBox="0 0 16 16">
-                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
-                  </svg>
-                  <p className="m-0">Add to cart</p>
-                </div>
-              </Button>
-            </div>
-          </Row>
+          <CustomFeedback />
         </Container>
       </>
     );

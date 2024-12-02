@@ -11,6 +11,7 @@ function App() {
       <CustomNavbar />
       <Welcome />
       <AllTheBooks />
+
       <CustomFooter date={new Date().getFullYear()} />
     </>
   );

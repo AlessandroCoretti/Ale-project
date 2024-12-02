@@ -1,9 +1,21 @@
+#dropdown-basic {
+  background-color: #ced4da;
+  border: none;
+  color: #495057;
+}
+
+.dropdown-menu.show {
+  background-color: #ced4da;
+}
+
 #row {
   width: 75%;
+  height: 500px;
+  overflow: scroll;
 }
 
 #row2 {
-  width: 25%;
+  width: 100%;
   text-align: left;
 }
 

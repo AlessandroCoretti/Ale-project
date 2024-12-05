@@ -51,11 +51,11 @@ const AllTheBooks = () => {
           </div>
         </Dropdown.Menu>
       </Dropdown>
-      <Container className="d-flex justify-content-between">
+      <Container fluid className="d-flex justify-content-between">
         <Row className="gy-3" id="row">
           <Col className="d-flex flex-wrap w-100">
             {books.map((book) => (
-              <Col className="col-3" key={book.asin}>
+              <Col className="col-sm-6 col-md-4 col-lg-2" key={book.asin}>
                 <Card className="h-100" onClick={() => setSelectedBook(book)}>
                   <Card.Img id="card-img" className="img-fluid" variant="top" src={book.img} />
                   <Card.Body className="d-flex flex-column justify-content-between">

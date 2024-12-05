@@ -1,8 +1,7 @@
-import { Component } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 
-class CustomFeedback extends Component {
-  render() {
+const CustomFeedback = ({ selectedBook }) => {
+  if (!selectedBook) {
     return (
       <Container className="d-flex w-25">
         <Row id="row2">
@@ -24,6 +23,20 @@ class CustomFeedback extends Component {
       </Container>
     );
   }
-}
+
+  return (
+    <Container className="d-flex w-25">
+      <Row id="row2">
+        <div id="feedback" className="d-flex flex-column">
+          <h4>Details of {selectedBook.title}</h4>
+          <p>{selectedBook.description}</p>
+          <p className="fw-h6">Price: {selectedBook.price}$</p>
+          <h6>Category: {selectedBook.category}</h6>
+          <Button variant="primary mx-auto">Add to cart</Button>
+        </div>
+      </Row>
+    </Container>
+  );
+};
 
 export default CustomFeedback;
